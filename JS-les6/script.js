@@ -1,1 +1,3 @@
-console.log(48 && 25);
+let message = "hello ";
+let messageEnd = (true) ? "first" : "second"
+console.log(message + messageEnd)
