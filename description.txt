@@ -60,3 +60,40 @@ typeof(variable) - поверне тип змінної
 
 Функції об'являються за допомогою function або ф-ціонального виразу
     називаються як дієсловоПредмет (showMessage)
+    Об'ява ф-ції: function funcName([params]){return}
+        може бути визвана до об'яви
+    Ф-й вираз: let funcName = function([params]){return};
+        може бути визвана поза блоком кода
+    Ф-я-стрілка: let funcName = ([params]) => return;
+        підвид ф-го виразу
+
+Планування ф-й: setTimeout та setInterval
+    ф-ї setTimeout та setInterval відкладають лише цільову ф-ю,
+        що не впливає на основний потік виконання
+    setTimeout(func, time, [params]) - викликає разово через time
+        setTimeout(showMessage, 3000, "message") - 
+            showMessage("message") через 3000мс (3с)
+    clearTimeout(variable) - зупиняє таймер, присвоєний змінній 
+    setInterval(func, time, [params]) - багаторазово через time
+        більш точну затримку дає рекурсивний setTimeout
+    clearInterval(variable) - зупиняє інтервал
+
+Створення та використання об'єкта:
+    конструктор об'єкта:    new Object();
+    літерал об'єкта:        {};
+    Властивості об'єкта {key: value, name: "Carl", age: 30,};
+    До всього об'єкта звертаються за іменем (console.log(object1));
+    До поля об'єкта по імені.полю (console.log(object1.name));
+        Для визова поля можна використовувати змінну з іменем поля:
+            let key = "name";
+            console.log(object1[key]);
+    Додавання полів об'єкту можна ініціалізацією object1.sex = male;
+    Видалення поля - delete object1.sex;
+    Зміна значення поля - object1.name = newName;
+    Копія об'єкта, копія полів об'єкта, дописування полями іншого:
+        Object.assign(кінцевий об'єкт, об'єкт або поля для копіювання)
+    Перевірка наявності поля: 
+        if(object1.name) - при відсутності (undefined) поверне false
+        object1?.address?.street - перевіряє наявність по ланцюгу
+        if("name" in object1) - поверне true при наявності поля
+
