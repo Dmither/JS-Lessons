@@ -1,8 +1,3 @@
-let userInfo = {}
-
-userInfo.name = "Sam";
-userInfo.age = 30;
-userInfo.name = "Helen";
-delete userInfo.name;
-
-console.log(userInfo)
+for (let i = 0; i < 5; i++){
+    console.log(Math.round(Math.random() * 10));
+}
