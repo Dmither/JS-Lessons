@@ -12,14 +12,21 @@ Document object model - представляє весь вміст HTML-стор
         head = document.head,
         body = document.body
 Далі можна використовувати ці об'єкти як відправну точку навігації:
-        *вузли вміщають елементи, текст, коментарі та ін
-    Навігація по вузлам:
+    *вузли вміщають елементи, текст, коментарі та ін
+Навігація по вузлам (для поточного елемента):
     .firstChild .lastChild перший та останній дочірній вузли
     .childNodes - виведе список всії дочірніх вузлів,
     .hasChildNodes() - виведе чи є дочірні вузли,
     .previousSibling .nextSibling попередній та наступний вузол,
     .parentNode - батьківський вузол
-    Навігація по елементам:
-    .children - виведе колекцію дочірніх елементів
+Навігація по елементам (для поточного елемента):
+    .children - виведе колекцію дочірніх елементів,
     .firstElementChild .lastElementChild .parentElement
     .previousElementSibling .nextElementSibling те ж по елементам
+Пошук по дереву вузлів (для вузла document або поточного):
+    .querySelectorAll(selector) пошук по селектору (тег, клас, ect.),
+    .querySelector(selector) пошук першого елемента по селектору,
+    Методи групи getElementsBy... створюють живу колекцію,
+    .closest(selector) шукає найближчого предка,
+    .matches(selector) перевіряє елемент на відповідність селектору
+Зміни
