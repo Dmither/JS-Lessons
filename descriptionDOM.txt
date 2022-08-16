@@ -1,0 +1,25 @@
+Браузерне оточення має глобальний об'єкт Window, що має методи для
+    керування вікном браузера і вміщає в себе JavaScript, BOM та DOM
+Browser object model - працює зі всім, крім документів
+    Методи комунікації з користувачем: alert(), confirm(), prompt()
+
+Document object model - представляє весь вміст HTML-сторінки в 
+    вигляді об'єктів, які можна змінювати. Вкладені - вузли-потомки,
+    текст і коментарі також об'єкти.
+Всі операції починаються із точки входу - об'єкта document.
+Верхні елементи дерева доступні як властивості document:
+    const html = document.documentElement,
+        head = document.head,
+        body = document.body
+Далі можна використовувати ці об'єкти як відправну точку навігації:
+        *вузли вміщають елементи, текст, коментарі та ін
+    Навігація по вузлам:
+    .firstChild .lastChild перший та останній дочірній вузли
+    .childNodes - виведе список всії дочірніх вузлів,
+    .hasChildNodes() - виведе чи є дочірні вузли,
+    .previousSibling .nextSibling попередній та наступний вузол,
+    .parentNode - батьківський вузол
+    Навігація по елементам:
+    .children - виведе колекцію дочірніх елементів
+    .firstElementChild .lastElementChild .parentElement
+    .previousElementSibling .nextElementSibling те ж по елементам
