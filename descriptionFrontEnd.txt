@@ -1,0 +1,46 @@
+Об'єкт документа (тег html): document.documentElement;
+
+Доступна ширина і висота (об'єкт документа): clientWidth; clientHeight;
+    (window.innerWidth - разом з прокруткою)
+Ширина і висота документа (з урахуванням різних браузерів):
+    Math.max(
+        document.body.scrollWidth, document.documentElement.scrollWidth,
+        document.body.offsetWidth, document.documentElement.offsetWidth,
+        document.body.clientWidth, document.documentElement.clientWidth
+    );
+    Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight,
+        document.body.clientHeight, document.documentElement.clientHeight
+    )
+
+Кількість прокручених пікселів:
+    читання значень: window.pageYOffset; window.pageXOffset;
+    прокрутка відносто поточного положення: window.scrollBy(x, y);
+    прокрутка відносно нуля на абсолютне значення: window.scrollTo(x, y);
+        window.scrollTo({top: y, left: x, behavior: (smooth/auto/instant)})
+    прокрутка відносно вказаного елемента: elem.scrollIntoView(top?t:f);
+        elem.scrollIntoView({
+            block: (start/center/end/nearest),
+            inline: (start/center/end/nearest),
+            behavior: (smooth/auto/instant)
+        });
+Блокування прокрутки: document.body.style.overflow = 'hiden';
+    - додає напряму заборону або (в CSS .scroll-lock{overflow: hiden;})
+    document.body.classList.toggle('scroll-lock); - робить це через CSS
+
+Метрики об'єкта: позиція, розміри, відступи, координати і т.п.
+    Батьківський об'єкт, відносно якого позіціонований: offsetParent.
+    Зміщення об'єкта відносно offsetParent: offsetLeft, offsetTop.
+    Загальні розміри об'єкта: offsetWidth, offsetHeight;
+    Відступи внутрішньої частини від зовнішньої: clientLeft, clientTop
+    Розміри контента (без clientL та clientT): clientWidth, clientHeight;
+    Розміри контента з прокруткою: scrollWidth, scrollHeight;
+    Розміри прокрученої області (можна змінювати): scrollLeft, scrollTop;
+    Координати об'єкта відносно вікна браузера: getBoundingClientRect()
+    Координати відносно сторінки визначаються додаванням прокручених пікселей
+    Визначити елемент по координатам вікна: document.elementFromPoint(x, y);
+
+Обробники подій: 
+    атрибут HTML (<button onclick="console.log('Click!')" ...>) 
+    через DOM-об'єкт
