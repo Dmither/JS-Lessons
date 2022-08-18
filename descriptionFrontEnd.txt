@@ -41,6 +41,19 @@
     Координати відносно сторінки визначаються додаванням прокручених пікселей
     Визначити елемент по координатам вікна: document.elementFromPoint(x, y);
 
-Обробники подій: 
-    атрибут HTML (<button onclick="console.log('Click!')" ...>) 
-    через DOM-об'єкт
+Прості обробники подій: 
+    через атрибут HTML (<button onclick="console.log('Click!')" ...>) 
+    через DOM-об'єкт (button.onclick = function (){console.log('Click!')}
+        або function clickBtn(){...}; button.onclick = clickBtn;)
+Прослуховувач подій (EventListener) дозволяє додавати обробку групи подій:
+    .addEventListener(event, function, *options) - додати прослуховування
+    .removeEventListener(event, function) - видалити прослуховування
+        const options = {"capture": false, "ones": false, "passive":false,}
+        function showConsole(){console.log("Click!")}
+        button.addEventListener("click", showConsole, options)
+
+При спрацюванні події браузер створює об'єкт з деталями і поміщає його 
+    аргументом ф-ї-обробнику (function showConsole(event){}). Його поля:
+    .type - тип події;              .clickX, .clickY - координати миші
+    .target - об'єкт спрацювання    .currentTarget - об'єкт з обробником
+    Всі інші поля отримаємо виводом події: console.log(event);
