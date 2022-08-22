@@ -95,7 +95,8 @@
 Події завантаження сторінки:
     DOMContentLoaded (document) - завантажений HTML, без зовнішніх ресурсів
     load (window) - HTML та всі зовнішні ресурси (фото, стилі і т.п.)
-    beforeunload / unload - коли користувач покидає сторінку
+    beforeunload / unload (window) - коли користувач покидає сторінку
 Відстежити стан завантаження: document.readyState
     loading - завантажується, interactive - повністю прочитаний, 
     complite - повністю прочитаний і зовнішні ресурси завантажені
+
