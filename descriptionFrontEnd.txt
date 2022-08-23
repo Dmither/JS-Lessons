@@ -100,3 +100,31 @@
     loading - завантажується, interactive - повністю прочитаний, 
     complite - повністю прочитаний і зовнішні ресурси завантажені
 
+Отримати колекцію всіх або одної форми сторінки: document.forms - колекція
+    Отримати конкретну форму: document.forms[0] або через html-атрибут name
+    вказавши його в document.forms.[formName];
+Отримати колекцію і конкретний елемент форми: [formname].elements - колекція
+    Отримати конкретний елемент: [formName].[elementName]
+    Отримати форму-предка по елементу: [elementName].form
+Значення input та textarea можна отримати та змінити в полях: 
+    value - для строки, checked - для була.
+В select є поля: options - колекція option-елементів, value - значення
+    обраного елемента, selectedIndex - номер вибраного option
+    Отримати текст елемента: .options[index].text
+Поля option: selected - чи вибраний, index - індекс, text - вміст
+Додати новий option: new option(text, value, defaultSelected, selected)
+    defaultSelected - додає html-атрибут, selected - вибирає
+
+Події та методи форм та їх елементів: 
+    "focus"/"blur" - спрацьовує при фокусі/втраті фокусу
+    .focus(), elem.blur() - фокусування/розфокусування на елементі
+    Для фокусу елементу потрібно мати tabindex (елементи форм мають за умов.)
+    tabindex="-1" дозволяє фокусуватись лише програмно (tab і lmb не фокусує)
+    елемент з фокусом: document.activeElement
+    "focusin"/"focusout - фокус/втрата зі вспливанням
+    "change" - спрацьовує після зміни значення елемента (в text як blur)
+    "input" - спрацьовує при кожній зміні значення (в text на кожному символі)
+    "copy"/"paste"/"cut" - спрацьовує при одноіменних діях
+    "submit" - спрацьовує при відправці форми
+    formName.submit(); - відправляє форму вручну
+    Забороняє стандартну реакцію на події event.preventDefault();

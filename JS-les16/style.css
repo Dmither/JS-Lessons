@@ -18,7 +18,10 @@ body {
   width: 50%;
 }
 .lesson__form > div > div > div {
-  margin: 10px 0;
+  margin: 30px 0 15px 0;
+}
+.lesson__form > div > div > div:first-child {
+  margin: 10px 0 10px 0;
 }
 .lesson__form > div p {
   margin: 0;
@@ -63,4 +66,8 @@ body {
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
+}
+
+._focus{
+  border: 1px dotted yellow;
 }
